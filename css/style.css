@@ -1,0 +1,99 @@
+/* General page styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #222;
+}
+
+
+/* Navigation bar */
+header {
+    background-color: #172554;
+    padding: 15px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: white;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #172554;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 15px auto;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+
+/* Conference details */
+.conference-details {
+    margin: 30px auto;
+}
+
+.conference-details p {
+    font-size: 17px;
+}
+
+
+/* Register button */
+.register-button {
+    display: inline-block;
+    background-color: #172554;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.register-button:hover {
+    background-color: #1e40af;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #172554;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+}

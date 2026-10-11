@@ -1,0 +1,334 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - STIC 2026</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <h2>STIC 2026</h2>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Registration Form -->
+    <main>
+
+        <section class="registration">
+
+            <h1>Conference Registration</h1>
+
+            <p>
+                Complete the form below to register for the
+                Student Technology and Innovation Conference.
+            </p>
+
+
+            <form action="process.php" method="POST" id="registrationForm">
+
+                <!-- Personal Information -->
+                <fieldset>
+
+                    <legend>Personal Information</legend>
+
+                    <label for="fullName">Full Name:</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                    >
+
+                    <span id="nameError" class="error"></span>
+
+
+                    <label for="admissionNumber">
+                        Admission / Registration Number:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="admissionNumber"
+                        name="admissionNumber"
+                        placeholder="e.g. BIT/1234/2026"
+                    >
+                   <span id="admissionerror"class="error"></span>
+
+
+                    <label for="email">Email Address:</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                    >
+
+                    <span id="emailError" class="error"></span>
+
+
+                    <label for="phone">Phone Number:</label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        placeholder="e.g. 0712345678"
+                        maxlength="10"
+                    >
+
+                    <span id="phoneError" class="error"></span>
+
+
+                    <label for="year">Year of Study:</label>
+
+                    <select id="year" name="year">
+                    <option value="">-- Select Year --</option>
+
+                        <option value="Year 1">Year 1</option>
+                        <option value="Year 2">Year 2</option>
+                        <option value="Year 3">Year 3</option>
+                        <option value="Year 4">Year 4</option>
+
+                    </select>
+                 <span id="yearError"class="error"></span>
+                </fieldset>
+
+
+                <!-- Participation Information -->
+                <fieldset>
+
+                    <legend>Participation Details</legend>
+
+                    <p>Participation Category:</p>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="category"
+                            value="Conference Only"
+                        >
+                        Conference Only
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="category"
+                            value="Workshop Participant"
+                        >
+                        Workshop Participant
+                    </label>
+
+                    <span id="categoryError" class="error"></span>
+
+
+                    <!-- Number of Conference Days -->
+                    <div id="daysSection" style="display: none;">
+
+                        <label for="days">
+                            Number of Conference Days:
+                        </label>
+
+                        <select id="days" name="days">
+
+                            <option value="">
+                                -- Select Days --
+                            </option>
+
+                            <option value="1">
+                                1 Day
+                            </option>
+
+                            <option value="2">
+                                2 Days
+                            </option>
+
+                            <option value="3">
+                                3 Days
+                            </option>
+
+                        </select>
+
+                        <span id="daysError" class="error"></span>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Workshop Options -->
+                <fieldset id="workshopSection" style="display: none;">
+
+                    <legend>Workshop Selection</legend>
+
+                    <p>Select a workshop:</p>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="workshop"
+                            value="Web Development"
+                        >
+                        Web Development - KSh 750
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="workshop"
+                            value="Artificial Intelligence"
+                        >
+                        Artificial Intelligence - KSh 1,000
+                    </label>
+
+
+                    <p id="workshopMessage">
+                        Select a workshop if you are participating in a workshop.
+                    </p>
+
+                </fieldset>
+
+
+                <!-- Meal Options -->
+                <fieldset>
+
+                    <legend>Meal Option</legend>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="lunch"
+                            name="lunch"
+                            value="Yes"
+                        >
+                        Lunch - KSh 300 per day
+                    </label>
+
+                    <p>
+                        Select lunch if you would like catering during the conference.
+                    </p>
+
+                </fieldset>
+
+
+                <!-- Fee Summary -->
+                <fieldset>
+
+                    <legend>Fee Summary</legend>
+
+                    <div class="fee-summary">
+
+                        <p>
+                            Conference Registration:
+                            <strong>KSh 1,000</strong>
+                        </p>
+
+
+                        <p>
+                            Attendance:
+                            <strong id="attendanceFee">
+                                KSh 0
+                            </strong>
+                        </p>
+
+
+                        <p>
+                            Workshop:
+                            <strong id="workshopFee">
+                                KSh 0
+                            </strong>
+                        </p>
+
+
+                        <p>
+                            Meals:
+                            <strong id="mealFee">
+                                KSh 0
+                            </strong>
+                        </p>
+
+
+                        <hr>
+
+
+                        <h2>
+                            Total Fee:
+                            <span id="totalFee">
+                                KSh 1,000
+                            </span>
+                        </h2>
+
+                    </div>
+
+
+                    <!-- JavaScript can use this value -->
+                    <input
+                        type="hidden"
+                        id="total"
+                        name="total"
+                        value="1000"
+                    >
+
+                </fieldset>
+
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="register-button"
+                >
+                    Submit Registration
+                </button>
+
+
+                <!-- Reset -->
+                <button
+                    type="reset"
+                    class="reset-button"
+                >
+                    Clear Form
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 Student Technology and Innovation Conference
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+```
